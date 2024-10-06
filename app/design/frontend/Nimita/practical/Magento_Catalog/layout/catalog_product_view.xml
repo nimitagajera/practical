@@ -1,0 +1,71 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Copyright © Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+-->
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    
+    <body>
+    <referenceBlock name="product.info.details">
+         <block class="Magento\Catalog\Block\Product\View" name="deliveryinfo.tab" as="deliveryinfo" template="Magento_Catalog::product/view/delivery_info.phtml" group="detailed_info" >
+            <arguments>
+               <argument translate="true" name="title" xsi:type="string">Delivery</argument>
+                <argument name="sort_order" xsi:type="string">20</argument>
+            </arguments>
+         </block>
+         <block class="Magento\Catalog\Block\Product\View" name="fitinfo.tab" as="fitinfo" template="Magento_Catalog::product/view/fit_info.phtml" group="detailed_info" >
+            <arguments>
+               <argument translate="true" name="title" xsi:type="string">Fit</argument>
+                <argument name="sort_order" xsi:type="string">30</argument>
+            </arguments>
+         </block>
+          <block class="Magento\Catalog\Block\Product\View" name="shareinfo.tab" as="shareinfo" template="Magento_Catalog::product/view/share_info.phtml" group="detailed_info" >
+            <arguments>
+               <argument translate="true" name="title" xsi:type="string">Share</argument>
+                <argument name="sort_order" xsi:type="string">40</argument>
+            </arguments>
+         </block>
+      </referenceBlock>
+      <referenceContainer name="product.info.social">
+         <block class="Magento\Cms\Block\Block" name="pdp-payment-info">
+            <arguments>
+               <argument name="block_id" xsi:type="string">pdp-payment-info</argument>
+            </arguments>
+         </block>
+      </referenceContainer>
+       <referenceContainer name="page.wrapper">
+
+            <block class="Magento\Cms\Block\Block" name="pdp-bottom-content" before="page.bottom">
+               <arguments>
+                  <argument name="block_id" xsi:type="string">pdp-bottom-content</argument>
+               </arguments>
+            </block>
+        </referenceContainer>
+
+      <referenceBlock name="product.info.options.wrapper">
+         <block class="Magento\Framework\View\Element\Template"
+               name="size-guide"
+               template="Magento_Catalog::product/view/size_guide.phtml"
+               before="product.info.options.swatches" />
+      </referenceBlock>
+
+      <move element="product.info.details" destination="content" before="-" />
+      <move element="page.main.title" destination="product.info.main" before="-"/>
+      <move element="product.info.stock.sku" destination="product.info.price" after="product.price.final"/>
+      <move element="product.info.review" destination="product.info.main" before="product.info.price"/>
+      <move element="product.info.overview" destination="product.info.main" after="page.main.title"/>
+      <move element="view.addto.wishlist" destination="product.info.media" before="-"/>
+
+      <referenceBlock name="breadcrumbs" remove="true"/>
+      <referenceBlock name="product.attributes" remove="true" />
+      <referenceBlock name="reviews.tab" remove="true" />
+      <referenceBlock name="catalog.product.related" remove="true" />
+      <referenceBlock name="product.info.upsell" remove="true" />
+      <referenceBlock name="product.info.sku" remove="true" />
+      <referenceBlock name="view.addto.compare" remove="true" />
+
+
+    </body>
+</page>
