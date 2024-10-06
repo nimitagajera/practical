@@ -47,10 +47,10 @@ ID: pdp-bottom-content
 Name: Product details bottom content
 1st row css class: additional-data
 2nd row css class: customer-review
-
+<pre>
 <h3>a note from the editor</h3>
 <p>The Forte Lurex Linen Viscose Jacket in Mother of Pearl features lunar lavishness by night and by day: a blazer in a linen blend shot with lurex for a shimmering surface that shines like a star in the sky.</p>
-<div class="customer-name">By <a href="#">MINNA SHIM,</a> Fashion Editor</div>
+<div class="customer-name">By <a href="#">MINNA SHIM,</a> Fashion Editor</div> </pre>
 
 
 
