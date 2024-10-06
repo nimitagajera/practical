@@ -1,0 +1,34 @@
+<?php
+/**
+ * Copyright © Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+
+/**
+ * Product media data template
+ *
+ * @var $block \Magento\Catalog\Block\Product\View\Gallery
+ * @var $escaper \Magento\Framework\Escaper
+ */
+?>
+
+
+
+<button type="button" class="action size-chart" data-trigger="trigger">
+    <span data-bind="i18n: 'Size Guide'"></span>
+</button>
+<div data-bind="mageInit: {
+        'Magento_Ui/js/modal/modal':{
+            'type': 'popup',
+            'title': 'Size Guide',
+            'trigger': '[data-trigger=trigger]',
+            'responsive': true,
+            'buttons': [{
+                text: 'Submit',
+                class: 'action'
+            }]
+        }}">
+    <div class="content">
+    <span data-bind="i18n: 'Content of size guide popup'"></span>
+    </div>
+</div>
